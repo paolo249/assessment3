@@ -2,5 +2,17 @@
 {% block content %}
 
 <h1>Wish List Items</h1>
+<hr>
+{% for item in item_list %}
+<dt>{{ item.description }}</dt>
+{% empty %}
+<h3> No Wish Items Exist </h3>
+<hr>
+{% endfor %}
+
+
+
+<!-- <input type="submit" value="Add A Wish Item" class="btn"> -->
+
 
 {% endblock %}
