@@ -1,14 +1,22 @@
-{% extends 'base.html' %}
-
-{% block content %}
-  {% if object %}
-    <h1>Edit <span class="teal-text">{{object.name}}</span></h1>
-  {% else %}
-    <h1>Add Item</h1>
-  {% endif %}
-  <form action="" method="post">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Add Wish Item </h1>
+  <form action="" method="POST" class = "pure-form">
     {% csrf_token %}
-      {{ form.as_p }}
-    <input type="submit" value="Submit!" class="btn">
+    {{ form.as_p }}
+    <!-- <input type="submit" value="ADD ITEM" class="pure-button"> -->
+    <button type = "submit" class="pure-button"> ADD ITEM </button>
   </form>
-{% endblock %}
+
+</body>
+
+
+  
