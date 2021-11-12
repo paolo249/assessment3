@@ -10,9 +10,8 @@
 <body>
   <h1>Add Wish Item </h1>
   <form action="" method="POST" class = "pure-form">
-    {% csrf_token %}
+  {% csrf_token %}
     {{ form.as_p }}
-    <!-- <input type="submit" value="ADD ITEM" class="pure-button"> -->
     <button type = "submit" class="pure-button"> ADD ITEM </button>
   </form>
 

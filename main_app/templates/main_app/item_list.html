@@ -13,18 +13,26 @@
 
     <h1>Wish List Items</h1>
     <dl>
-    {% for item in item_list %}
     <table>
-        <tr> 
-          <td>{{item.description}}</td>
-          <td> <button type="submit">X</button> </td>
-        </tr>
+        <thead> 
+     <tr>  <th> Description</th>  
+            <th> Delete</th> </tr>
+            </thead>
+    {% for item in item_list %}
+         <tr><td>{{item.description}}</td>
+          <td><form action="{% url 'item_delete' item.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit">X</button> </form></td>
+          </tr>
+        
+          
+          {% empty %}
+          <h3> No Wish Items Exist </h3>
+          <hr>
+          
+          {% endfor %}
     </table>
-    {% empty %}
-    <h3> No Wish Items Exist </h3>
-    <hr>
-    <a href="{% url 'add' %}" class = "pure-button"> Add a Wish Item </a>
-    {% endfor %}
     </dl>
+    <a href="{% url 'add' %}" class = "pure-button"> Add a Wish Item </a>
 </body>
 </html>

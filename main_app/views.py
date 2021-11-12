@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 from django.views.generic import ListView
 from .models import Item
 
@@ -12,4 +12,8 @@ class ItemsCreate(CreateView):
 
 class ItemList(ListView):
     model = Item
+
+class ItemDelete(DeleteView):
+  model = Item
+  success_url = '/'
 
